@@ -2,7 +2,9 @@ FROM osrf/ros:melodic-desktop-full-bionic
 
 RUN apt-get update
 
-RUN apt-get install ros-melodic-usb-cam ros-melodic-rosbridge-server ros-melodic-web-video-server
+RUN apt-get install -y ros-melodic-usb-cam ros-melodic-rosbridge-server ros-melodic-web-video-server
+
+SHELL ["/bin/bash", "-c"]
 
 RUN mkdir -p ~/web_ws/src \
     && cd ~/web_ws/src \
