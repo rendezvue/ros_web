@@ -102,7 +102,8 @@ var app = new Vue({
             this.topic.publish(this.message)
         },
         setCamera: function() {
-            let host = 'localhost:11315'
+            let ip_address = this.rosbridge_address.split('/');
+            let host = ip_address[2].replace('9090', '11315')
             let viewer = new MJPEGCANVAS.Viewer({
                 divID: 'divCamera',
                 host: host,
